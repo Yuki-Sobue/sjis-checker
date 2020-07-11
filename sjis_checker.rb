@@ -1,6 +1,5 @@
 require "./checker_mode.rb"
 
-
 class SjisChecker
   attr_accessor :mode, :encoding
 
@@ -18,7 +17,7 @@ class SjisChecker
   end
 
   def execute(string)
-    mode.execute(string)
+    mode.execute(string, encoding)
   end
 
   def set_replacer(string)

@@ -23,11 +23,13 @@ module CheckerMode
   end
 
   class Default < Base
-
-    def execute(string)
-      string
-    end
+    def execute(string, encoding)
+      string.encode(encoding)
+      rescue
+        nil
+      end
   end
+  
 
   class Replace < Base
     attr_accessor :replacer
