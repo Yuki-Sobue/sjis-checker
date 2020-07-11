@@ -5,9 +5,13 @@ SJISコード指定で生じるトラブルを防ぐためのチェッカーで�
 ## USAGE
 
 ### 準備
+`sjis_checker.rb`と`checker_mode.rb`は同一もディレクトリに配置してください。
+
+
+チェッカーを使用したいファイルに以下を追記してください。
 
 ```
-require "[PATH]/sjis-checker.rb"
+require "[PATH]/sjis＿checker.rb"
 ```
 
 
