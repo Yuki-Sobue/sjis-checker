@@ -9,13 +9,19 @@ module CheckerMode
 
   class Default < Base
 
-    def self.execute(string)
+    def execute(string)
       string
     end
   end
 
   class Replace < Base
-    def self.execute(string)
+    attr_accessor :replacer
+
+    def initalize(char = " ")
+       self.replacer = char.to_s
+    end
+
+    def execute(string)
       string
     end
   end
