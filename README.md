@@ -9,7 +9,7 @@ checker = SjisChecker.new
 ```
 
 ### available?
-SJISで使用可能な文字列化を真偽値で返す
+SJISで使用可能な文字列を真偽値で返す
 
 ```ruby:
 checker = SjisChecker.new
