@@ -9,11 +9,15 @@ class SjisChecker
     @mode = mode.new
   end
 
-  def encode(str)
-    str.encode(encoding)
+  def encode(string)
+    mode.encode(string)
   end
 
-  def scan(string)
+  def available?(string)
+    mode.available?(string)
+  end
+
+  def execute(string)
     mode.execute(string)
   end
 
