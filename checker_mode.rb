@@ -1,7 +1,5 @@
 module CheckerMode
   class Base
-
-
     def execute(string)
       raise "please override execute method in subclass of CheckerMode::Base"
     end
@@ -23,6 +21,10 @@ module CheckerMode
 
     def execute(string)
       string
+    end
+
+    def set_replacer(string)
+      self.replacer = string
     end
   end
 end
