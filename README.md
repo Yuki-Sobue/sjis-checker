@@ -1,7 +1,15 @@
 # sjis-checker
 SJISコード指定で生じるトラブルを防ぐためのチェッカーです。
+ 
 
 ## USAGE
+
+### 準備
+
+```
+require "[PATH]/sjis-checker.rb"
+```
+
 
 ### チェッカーを用意する
 ```
