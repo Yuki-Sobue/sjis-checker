@@ -10,11 +10,11 @@ class SjisChecker
   end
 
   def encode(string)
-    mode.encode(string)
+    mode.encode(string, encoding)
   end
 
   def available?(string)
-    mode.available?(string)
+    mode.available?(string, encoding)
   end
 
   def execute(string)

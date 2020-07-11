@@ -4,15 +4,15 @@ module CheckerMode
       raise "please override execute method in subclass of CheckerMode::Base"
     end
 
-    def encode(string)
+    def encode(string, encoding)
       begin
-        str.to_s.encode(encoding)
+        string.encode(encoding)
       rescue
         raise "Cannot use this string in #{encoding}"
       end
     end
   
-    def available?(string)
+    def available?(string, encoding) 
       begin
         string.encode(encoding)
       true
