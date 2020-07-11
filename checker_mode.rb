@@ -25,25 +25,33 @@ module CheckerMode
   class Default < Base
     def execute(string, encoding)
       string.encode(encoding)
-      rescue
+    rescue
         nil
-      end
-  end
-  
-
-  class Replace < Base
-    attr_accessor :replacer
-
-    def initalize(char = " ")
-       self.replacer = char.to_s
-    end
-
-    def execute(string)
-      string
-    end
-
-    def set_replacer(string)
-      self.replacer = string
     end
   end
+
+  # class Replace < Base
+  #   attr_accessor :replacer, :string
+
+  #   def initalize(char = " ")
+  #      self.replacer = char.to_s
+  #   end
+
+  #   # TODO replace
+  #   def execute(string)
+  #     self.string = string.encode(encoding)
+  #   rescue
+  #     nil
+  #     # replace
+  #   end
+
+  #   def set_replacer(string)
+  #     self.replacer = string
+  #   end
+
+  #   private
+  #   def replace
+
+  #   end
+  # end
 end
