@@ -39,3 +39,18 @@ checker = SjisChecker.new
 checker.execute("🌟")
 => nil
 ```
+
+## 置換モード
+
+置換モードに設定すると、executeの返り値が、SJISで使用できない文字を ？ で置換したものになります。
+
+```
+replacer = SjisChecker.new(CheckerMode::Replace)
+```
+
+```
+.execute("🌟")
+=> "?"
+```
+
+
