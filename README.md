@@ -62,8 +62,10 @@ replacer.execute("🌟")
 （`normal_mode`メソッドを使用すると逆のデフォルト設定に戻ります）
 
 ```
-checker = SjisChecker.new #=> <SjisChecker:0x00007fdee7095150 @encoding="SJIS", @mode=#<CheckerMode::Default:0x00007fdee7095100>>
-checker.replace_mode #=> <SjisChecker:0x00007fdee7095150 @encoding="SJIS", @mode=#<CheckerMode::Replace:0x00007fdee708e440>>
+checker = SjisChecker.new
+#=> <SjisChecker:0x00007fdee7095150 @encoding="SJIS", @mode=#<CheckerMode::Default:0x00007fdee7095100>>
+checker.replace_mode 
+#=> <SjisChecker:0x00007fdee7095150 @encoding="SJIS", @mode=#<CheckerMode::Replace:0x00007fdee708e440>>
 ```
 
 
