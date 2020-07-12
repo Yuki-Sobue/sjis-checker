@@ -31,6 +31,6 @@ class SjisChecker
   end
 
   def set_replacer(string)
-    mode.set_replacer(string)
+    mode.set_replacer(string, encoding)
   end
 end
