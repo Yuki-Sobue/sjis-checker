@@ -8,6 +8,10 @@ class SjisChecker
     self.mode = mode.new
   end
 
+  def default_mode
+    normal_mode
+  end
+
   def normal_mode 
     self.mode = CheckerMode::Default.new
     self
