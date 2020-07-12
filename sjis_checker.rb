@@ -1,11 +1,16 @@
 require "./checker_mode.rb"
 
 class SjisChecker
-  attr_accessor :mode, :encoding
+  attr_accessor :encoding
+  attr_writer :mode
 
   def initialize(mode = CheckerMode::Default)
     self.encoding = "SJIS"
     self.mode = mode.new
+  end
+
+  def current_mode
+    @mode
   end
 
   def default_mode
@@ -23,18 +28,18 @@ class SjisChecker
   end
 
   def encode(string)
-    mode.encode(string, encoding)
+    current_mode.encode(string, encoding)
   end
 
   def available?(string)
-    mode.available?(string, encoding)
+    current_mode.available?(string, encoding)
   end
 
   def execute(string)
-    mode.execute(string, encoding)
+    current_mode.execute(string, encoding)
   end
 
   def set_replacer(string)
-    mode.set_replacer(string, encoding)
+    current_mode.set_replacer(string, encoding)
   end
 end
