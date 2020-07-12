@@ -37,6 +37,7 @@ module CheckerMode
       replace(string, encoding)
     end
 
+    # TODO validationの責任を切り出す
     def set_replacer(string, encoding)
       raise "replacer must be 1 charactor" if string.count == 1
       raise "this replacer cannot use" unless available?(string, encoding)
