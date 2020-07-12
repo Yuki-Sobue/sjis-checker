@@ -33,7 +33,6 @@ module CheckerMode
   class Replace < Base
     attr_accessor :replacer
 
-    # TODO 可変replacer
     def execute(string, encoding)
       replace(string, encoding)
     end
@@ -44,16 +43,16 @@ module CheckerMode
 
     private
     def replace(string, encoding)
-      original_string = string
-      0.upto(original_string.length - 1) do |idx|
-        char = original_string[idx]
+      target_string = string
+      0.upto(target_string.length - 1) do |idx|
+        char = target_string[idx]
         if available?(char, encoding) 
     
         else
-          original_string[idx] = replacer || "?"
+          target_string[idx] = replacer || "?"
         end
       end
-      original_string
+      target_string
     end
   end
 end
