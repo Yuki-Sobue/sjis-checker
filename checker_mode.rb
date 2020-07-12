@@ -31,6 +31,7 @@ module CheckerMode
   end
 
   class Replace < Base
+    attr_accessor :replacer
 
     # TODO 可変replacer
     def execute(string, encoding)
@@ -49,7 +50,7 @@ module CheckerMode
         if available?(char, encoding) 
     
         else
-          original_string[idx] = "?"
+          original_string[idx] = replacer || "?"
         end
       end
       original_string
