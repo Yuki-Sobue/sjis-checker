@@ -4,8 +4,18 @@ class SjisChecker
   attr_accessor :mode, :encoding
 
   def initialize(mode = CheckerMode::Default)
-    @encoding = "SJIS"
-    @mode = mode.new
+    self.encoding = "SJIS"
+    self.mode = mode.new
+  end
+
+  def normal_mode 
+    self.mode = CheckerMode::Default.new
+    self
+  end
+
+  def replace_mode
+    self.mode = CheckerMode::Replace.new
+    self
   end
 
   def encode(string)
