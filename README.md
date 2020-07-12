@@ -49,7 +49,7 @@ replacer = SjisChecker.new(CheckerMode::Replace)
 ```
 
 ```
-.execute("🌟")
+replacer.execute("🌟")
 => "?"
 ```
 
