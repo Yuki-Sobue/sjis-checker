@@ -1,11 +1,13 @@
 require "./checker_mode.rb"
 
 class SjisChecker
-  attr_accessor :encoding
+  attr_reader :encoding
   attr_writer :mode
 
+  ENCODING = "SJIS".freeze
+
   def initialize(mode = CheckerMode::Default)
-    self.encoding = "SJIS"
+    @encoding = ENCODING
     self.mode = mode.new
   end
 
