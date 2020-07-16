@@ -40,11 +40,14 @@ module CheckerMode
       replace(string, encoding)
     end
 
-    # TODO validationの責任を切り出す
     def set_replacer(string, encoding)
+      replacer_validation(string, encoding)
+      self.replacer = string 
+    end
+
+    def replacer_validation(string, encoding)
       raise "replacer must be 1 charactor" if string.length != MAX_REPLACER
       raise "this replacer cannot use" unless available?(string, encoding)
-      self.replacer = string
     end
 
     private
