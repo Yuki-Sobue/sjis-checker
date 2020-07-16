@@ -43,5 +43,6 @@ class SjisChecker
 
   def set_replacer(string)
     current_mode.set_replacer(string, encoding)
+    self
   end
 end
