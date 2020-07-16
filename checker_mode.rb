@@ -1,4 +1,7 @@
 module CheckerMode
+
+  MAX_REPLACER = 1
+
   class Base
     def execute(string)
       raise "please override execute method in subclass of CheckerMode::Base"
@@ -39,7 +42,7 @@ module CheckerMode
 
     # TODO validationの責任を切り出す
     def set_replacer(string, encoding)
-      raise "replacer must be 1 charactor" if string.count == 1
+      raise "replacer must be 1 charactor" if string.length != MAX_REPLACER
       raise "this replacer cannot use" unless available?(string, encoding)
       self.replacer = string
     end
@@ -49,11 +52,7 @@ module CheckerMode
       target_string = string
       0.upto(target_string.length - 1) do |idx|
         char = target_string[idx]
-        if available?(char, encoding) 
-    
-        else
-          target_string[idx] = replacer || "?"
-        end
+        target_string[idx] = replacer || "?" unless available?(char, encoding) 
       end
       target_string
     end
